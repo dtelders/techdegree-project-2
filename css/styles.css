@@ -3,7 +3,7 @@ body {
     line-height: 150%;
 }
 
-/* navigation */
+/* navigation and header */
 .title {
     text-align: center;
     margin-top: 0;
@@ -11,7 +11,7 @@ body {
 a {
     text-decoration: none;
 }
-li {
+.main-nav li {
     list-style: none;
     text-align: center;
     text-transform: uppercase;
@@ -21,44 +21,48 @@ li {
     background: white;
     width: 90%;
 }
-ul {
+.main-nav ul {
     padding: 0;
 }
 .headshot {
     width: 60%;
     display: block;
-    margin: 3.5em auto;
+    margin: 3.5em auto 2em;
 }
 header {
     background: #f6f6f6;
     padding: 1.5em 0 2em;
 }
 header p {
-    width: 90%;
+    width: 80%;
     text-align: center;
     margin: auto;
 }
 /* layout */
 img {
     width: 100%;
+    margin-top: 2em;
 }
 .container {
     width: 90%;
     text-align: center;
-    margin-left: 1em;
+    margin: auto;
     padding-bottom: 3em;
 }
 h2 {
     margin-top: 1.5em;
+    font-family: "Mukta", sans-serif;
 }
-/* additional style */
 .section-title {
     text-transform: uppercase;
     margin-top: 3em;
     margin-bottom: 3em;
+    font-family: "Mukta", sans-serif;
+    color: rgb(27, 27, 189);
 }
-/* footer and contact */
+/* footer, skills and contact */
 .contact,
+.skills,
 footer {
     background: #f6f6f6;
     text-align: center;
@@ -72,11 +76,139 @@ footer {
 .footer-links {
     display: none;
 }
-footer {
-    border-top: 1px solid lightgrey;
+hr {
+    width: 90%;
+    border: 1px solid lightgray;
 }
-footer h4,
-footer a {
-    border: solid red;
-    display: inline-block;
+footer h4 {
+    float: left;
+    margin-left: 5%;
+    margin-top: 1.5em;
+}
+footer .top {
+    float: right;
+    margin-right: 5%;
+    margin-top: 1.5em;
+    font-weight: bold;
+    font-size: 90%;
+}
+
+a:hover {
+    color: green;
+}
+
+/* float clearfix */
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+/* media queries */
+
+@media (min-width: 768px) {
+    .nav-links {
+        text-align: center;
+        margin-top: 1em;
+    }
+    .nav-links li {
+        display: inline;
+        background: none;
+        padding: 1em;
+    }
+    .main-nav .title {
+        margin: 0.5em 0 1em;
+    }
+    header p {
+        float: left;
+        width: 53%;
+        text-align: left;
+        margin: 2em 0.5em 0 2em;
+    }
+    header .headshot {
+        float: right;
+        width: 37%;
+        margin-top: 2em;
+        margin-right: 2em;
+    }
+    header {
+        padding-bottom: 0;
+    }
+    .marketing,
+    .travel,
+    .photo {
+        float: left;
+        width: 50%;
+        padding-right: 0.5em;
+        min-height: 426px;
+        box-sizing: border-box;
+    }
+    .search,
+    .map,
+    .calc {
+        float: right;
+        width: 50%;
+        padding-left: 0.5em;
+        min-height: 426px;
+        box-sizing: border-box;
+    }
+
+    footer .top {
+        display: none;
+    }
+    .footer-links {
+        display: block;
+        background: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        list-style: none;
+        float: right;
+        margin-right: 5%;
+        font-size: 90%;
+    }
+    .footer-links li {
+        display: inline;
+        padding-left: 1.5em;
+    }
+
+    footer h4 {
+        margin-top: 1em;
+    }
+}
+@media (min-width: 1024px) {
+    .marketing,
+    .search,
+    .travel {
+        float: left;
+        width: 33%;
+        padding: 0 0.5em;
+        box-sizing: border-box;
+    }
+    .map,
+    .photo,
+    .calc {
+        float: left;
+        width: 33%;
+        padding: 0 0.5em;
+        box-sizing: border-box;
+    }
+    .main-nav .title {
+        float: left;
+        margin-left: 1em;
+        margin-top: 0;
+    }
+    body {
+        background: #f6f6f6;
+    }
+    .container {
+        background: white;
+        padding: 3em 2em 0;
+    }
+    .nav-links {
+        text-align: right;
+        margin-right: 1em;
+    }
+    .footer-links {
+        text-align: right;
+        margin-right: 5%;
+    }
 }
